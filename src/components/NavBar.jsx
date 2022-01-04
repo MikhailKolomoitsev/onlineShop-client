@@ -20,7 +20,10 @@ const NavBar = observer(() => {
     }
 
     return (
-        <Navbar bg="dark" variant="dark">
+        <Navbar
+            bg="primary"
+            variant="light"
+        >
             <Container>
                 <NavLink
                     to={SHOP_ROUTE}
