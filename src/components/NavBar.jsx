@@ -10,7 +10,7 @@ import Container from "react-bootstrap/Container";
 import { useHistory } from 'react-router-dom'
 
 
-const NavBar = observer(() => {
+const NavBar = observer(({showBasket}) => {
     const { user, device } = useContext(Context)
     const history = useHistory()
 
@@ -50,13 +50,14 @@ const NavBar = observer(() => {
                         </Button>
                     </Nav>
                     :
-                    <Nav className="ml-auto" style={{ color: 'white' }}>
+                    <Nav className="ml-auto mr-3" style={{ color: 'white' }}>
                         <Button
                             variant={"outline-light"}
                             onClick={() => history.push(LOGIN_ROUTE)}
                         >Log-in
                         </Button>
                     </Nav>}
+                <Button variant={"outline-light"} onClick={() => showBasket()}>Show Chart</Button>
             </Container>
         </Navbar>
     )
